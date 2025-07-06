@@ -141,13 +141,35 @@ html {
     width: 100%;
 }
 
-/* Modal Styles */
+/* Modal Styles - FIXED CENTERING */
+.quicksignage-landing .modal {
+    z-index: 1055;
+}
+
+.quicksignage-landing .modal-dialog {
+    margin: 1.75rem auto;
+    max-width: 1200px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 3.5rem);
+}
+
+.quicksignage-landing .modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 3.5rem);
+}
+
 .quicksignage-landing .modal-content {
     border-radius: 20px;
     border: none;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     max-height: 90vh;
     overflow-y: auto;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
 }
 
 .quicksignage-landing .modal-header {
@@ -960,6 +982,10 @@ html {
         font-size: 1.4rem;
         max-width: 900px;
     }
+    
+    .quicksignage-landing .modal-dialog {
+        max-width: 1400px;
+    }
 }
 
 @media (min-width: 2560px) {
@@ -982,6 +1008,10 @@ html {
     .quicksignage-landing .section-subtitle {
         font-size: 1.6rem;
     }
+    
+    .quicksignage-landing .modal-dialog {
+        max-width: 1600px;
+    }
 }
 
 /* Enhanced Responsive Design */
@@ -994,6 +1024,11 @@ html {
     .quicksignage-landing .hero-content {
         text-align: center;
         margin-bottom: 2rem;
+    }
+    
+    .quicksignage-landing .modal-dialog {
+        max-width: 95%;
+        margin: 1rem auto;
     }
 }
 
@@ -1014,6 +1049,11 @@ html {
     .quicksignage-landing .trust-item {
         justify-content: center;
         margin-bottom: 1.5rem;
+    }
+    
+    .quicksignage-landing .modal-dialog {
+        max-width: 98%;
+        margin: 0.5rem auto;
     }
 }
 
@@ -1070,6 +1110,15 @@ html {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.3rem;
+    }
+    
+    .quicksignage-landing .modal-dialog {
+        width: 95%;
+        margin: 0.5rem auto;
+    }
+    
+    .quicksignage-landing .modal-content {
+        max-height: 95vh;
     }
 }
 
@@ -1128,6 +1177,11 @@ html {
     .quicksignage-landing .guarantee-icon {
         margin-right: 0;
         margin-bottom: 0.75rem;
+    }
+    
+    .quicksignage-landing .modal-dialog {
+        width: 98%;
+        margin: 0.25rem auto;
     }
 }
 
