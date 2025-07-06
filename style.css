@@ -13,6 +13,12 @@
     --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
     --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     --navbar-height: 80px;
+    
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--white);
+    overflow-x: hidden;
 }
 
 .quicksignage-landing * {
@@ -21,17 +27,9 @@
     box-sizing: border-box;
 }
 
-.quicksignage-landing {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: var(--dark-color);
-    background-color: var(--white);
-    overflow-x: hidden;
-}
-
-.quicksignage-landing html {
+html {
     scroll-behavior: smooth;
-    scroll-padding-top: var(--navbar-height);
+    scroll-padding-top: 80px;
 }
 
 /* Typography */
@@ -318,7 +316,8 @@
     display: flex;
     align-items: center;
     padding-top: var(--navbar-height);
-    margin-bottom: 0; /* Remove any bottom margin */
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .quicksignage-landing .hero-overlay {
@@ -498,7 +497,13 @@
 .quicksignage-landing .value-prop-section {
     padding: 5rem 0;
     background: var(--light-color);
-    margin-top: 0; /* Remove any top margin */
+    margin-top: 0;
+}
+
+/* Remove any potential gaps between hero and value prop sections */
+.quicksignage-landing .hero-section + .value-prop-section {
+    margin-top: 0;
+    padding-top: 5rem;
 }
 
 .quicksignage-landing .step-card {
@@ -781,7 +786,7 @@
     border-color: var(--primary-color);
 }
 
-.quicksignage-landing .benefit-icon {
+.quicksignage-landing .benefit-card .benefit-icon {
     width: clamp(60px, 8vw, 100px);
     height: clamp(60px, 8vw, 100px);
     background: var(--gradient);
@@ -1163,7 +1168,7 @@
         transition-duration: 0.01ms !important;
     }
     
-    .quicksignage-landing html {
+    html {
         scroll-behavior: auto;
     }
 }
@@ -1177,15 +1182,37 @@
     transform: translateY(0) !important;
 }
 
-/* Fix any potential gaps between sections */
-.quicksignage-landing .hero-section + .value-prop-section {
-    margin-top: 0;
-}
-
+/* Critical: Remove all gaps between sections */
 .quicksignage-landing section {
-    margin-bottom: 0;
+    margin: 0;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
-.quicksignage-landing section:last-child {
+.quicksignage-landing .hero-section {
     margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.quicksignage-landing .value-prop-section {
+    margin-top: 0;
+    padding-top: 5rem;
+}
+
+/* Ensure proper container alignment */
+.quicksignage-landing .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Fix Bootstrap container issues */
+.quicksignage-landing .container-fluid {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
